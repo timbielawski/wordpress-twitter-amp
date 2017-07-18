@@ -1,6 +1,7 @@
 # wordpress-amp-santisers
 
 Plugin to load custom santisers for the amp wordpress plugin
+Current support for Twitter and Instagram
 
 ## Installation
 
