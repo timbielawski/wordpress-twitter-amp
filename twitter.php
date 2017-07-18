@@ -27,11 +27,15 @@ class AMP_Twitter_Embed_Sanitizer extends AMP_Base_Sanitizer {
         foreach($medias as $media){
             $href = $media->getAttribute('href');
             if (preg_match('/twitter.com/',$href)){
-                $explode = explode('/', rtrim($href, '/'));
-                $tweetId = end($explode);
-                $tag = $this->create_twitter_tag($tweetId);
-                $this->twitter_medias[] = $tag; // add it to array
-                $twitter_media->parentNode->replaceChild( $tag, $twitter_media);
+                $response = wp_remote_get($href);
+                $response_code = wp_remote_retrieve_response_code( $response );
+                if($response_code == 200){
+                    $explode = explode('/', rtrim($href, '/'));
+                    $tweetId = end($explode);
+                    $tag = $this->create_twitter_tag($tweetId);
+                    $this->twitter_medias[] = $tag; // add it to array
+                    $twitter_media->parentNode->replaceChild( $tag, $twitter_media);
+                }
             }
         }
     }
