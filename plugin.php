@@ -1,7 +1,7 @@
 <?php
   /*
   * Plugin Name: Wordpress amp santisers
-  * Description:  Santizers block code currently twiiter and instagram supported thanks to Suraj Krishna Air
+  * Description:  Santizers block code currently twitter and instagram supported thanks to Suraj Krishna Air
   * Version:  0.1
   * Plugin URI: https://github.com/timbielawski/wordpress-twitter-amp
   */
